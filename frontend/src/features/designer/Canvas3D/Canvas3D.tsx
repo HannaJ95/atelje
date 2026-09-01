@@ -174,7 +174,7 @@ const handlePanControls = () => {
         onPointerMissed={() => handleFrameSelect(null)} // Deselect frame when clicking anywhere else in the scene
         shadows
       >
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={1} />
         <pointLight position={[0, pointLightHeight, -YPosition * 0.33]} intensity={3} castShadow />
         <directionalLight
           position={[0, directionalLightHeight, 0]}
