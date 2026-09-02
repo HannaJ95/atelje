@@ -35,6 +35,7 @@ export default function DesignerPage() {
     setFurnitureWidth,
     setWallColor,
     setFlooring,
+    setLight,
     setWallWidth,
     addFrame,
     deleteFrame,
@@ -100,6 +101,7 @@ export default function DesignerPage() {
         setWallWidth={setWallWidth}
         setWallColor={setWallColor}
         setFlooring={setFlooring}
+        setLight={setLight}
         setFrameColor={setFrameColor}
         setFrameImage={setFrameImage}
         setFrameOrientation={setFrameOrientation}

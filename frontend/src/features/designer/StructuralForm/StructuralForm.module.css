@@ -99,3 +99,23 @@
     border-radius: 50%;
     pointer-events: none;
 }
+
+/* Light Form Styles */
+.lightSliderContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.lightSlider {
+    cursor: pointer;
+}
+
+.lightValue {
+    font-size: 1rem;
+    background: var(--snowdrop);
+    border-radius: 3rem;
+    padding: 0.3rem 1rem;
+    color: var(--charcoal);
+}

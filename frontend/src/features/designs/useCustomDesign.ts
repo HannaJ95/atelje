@@ -7,6 +7,7 @@ export interface CustomDesign {
   ceilingHeight: number;
   wallColor: string;
   flooring: string;
+  light: number;
   furnitureColor: FurnitureColor;
   furnitureWidth: number,
   furnitureDepth: number,
@@ -31,6 +32,7 @@ export type DesignData = {
   frames: FrameData[];
 
   flooring: string;
+  light: number;
 };
 
 interface OccupiedPosition {
@@ -47,6 +49,7 @@ export function useCustomDesign(initialDesign?: Partial<CustomDesign>) {
     ceilingHeight: initialDesign?.ceilingHeight ?? 300,
     wallColor: initialDesign?.wallColor ?? "#DEDEDE",
     flooring: initialDesign?.flooring ?? "birch-floor-parquet",
+    light: initialDesign?.light ?? 1,
     furnitureColor: initialDesign?.furnitureColor ?? { sofa: "#8B4513" },
     furnitureDepth: initialDesign?.furnitureDepth ?? 80,
     furnitureWidth: initialDesign?.furnitureWidth ?? 210,
@@ -86,6 +89,10 @@ export function useCustomDesign(initialDesign?: Partial<CustomDesign>) {
 
   const setFlooring = (value: string) => {
     setCustomDesign((prev) => ({ ...prev, flooring: value }));
+  }
+
+  const setLight = (value: number) => {
+    setCustomDesign((prev) => ({ ...prev, light: value }));
   }
 
   // Furniture helper functions
@@ -217,7 +224,8 @@ export function useCustomDesign(initialDesign?: Partial<CustomDesign>) {
         height: customDesign.furnitureHeight
       },
       frames: customDesign.frames,
-      flooring: customDesign.flooring
+      flooring: customDesign.flooring,
+      light: customDesign.light
     };
     return JSON.stringify(data);
   };
@@ -229,6 +237,7 @@ export function useCustomDesign(initialDesign?: Partial<CustomDesign>) {
     ceilingHeight: currentDesign.wall.height,
     wallColor: currentDesign.wall.color,
     flooring: currentDesign.flooring,
+    light: currentDesign.light ?? 1,
     furnitureColor: currentDesign.sofa.color,
     furnitureDepth: currentDesign.sofa.depth,
     furnitureWidth: currentDesign.sofa.width,
@@ -258,6 +267,7 @@ export function useCustomDesign(initialDesign?: Partial<CustomDesign>) {
     setCeilingHeight,
     setWallColor,
     setFlooring,
+    setLight,
     setFurnitureColor,
     setFurnitureDepth,
     setFurnitureWidth,

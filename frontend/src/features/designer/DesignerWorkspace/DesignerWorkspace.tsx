@@ -39,6 +39,7 @@ interface DesignerWorkspaceProps {
   setCeilingHeight: (height: number) => void;
   setWallColor: (color: string) => void;
   setFlooring: (flooring: string) => void;
+  setLight: (light: number) => void;
   setFurnitureColor: (color: FurnitureColor) => void;
   setFurnitureDepth: (depth: number) => void;
   setFurnitureWidth: (width: number) => void;
@@ -70,6 +71,7 @@ export default function DesignerWorkspace({
   setCeilingHeight,
   setWallColor,
   setFlooring,
+  setLight,
   setFurnitureColor,
   setFurnitureDepth,
   setFurnitureHeight,
@@ -210,6 +212,8 @@ export default function DesignerWorkspace({
             setWallColor={setWallColor}
             flooring={customDesign.flooring}
             setFlooring={setFlooring}
+            light={customDesign.light}
+            setLight={setLight}
           />
         </div>
         <div className={styles.topBarDividerRight}>
@@ -322,6 +326,7 @@ export default function DesignerWorkspace({
               ceilingHeight={customDesign.ceilingHeight}
               wallColor={customDesign.wallColor}
               flooring={customDesign.flooring}
+              light={customDesign.light}
               furnitureColor={customDesign.furnitureColor}
               furnitureDepth={customDesign.furnitureDepth}
               furnitureWidth={customDesign.furnitureWidth}
