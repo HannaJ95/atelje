@@ -18,6 +18,7 @@ interface Canvas3DProps {
   ceilingHeight: number;
   wallColor: string;
   flooring: string;
+  light: number;
   furnitureColor: FurnitureColor;
   furnitureWidth: number;
   furnitureDepth: number;
@@ -38,7 +39,7 @@ interface Canvas3DProps {
   onCameraReady?: (resetCamera: () => void) => void;
 }
 
-export default function Canvas3D({ wallWidth, ceilingHeight, wallColor, flooring, furnitureColor, furnitureWidth, furnitureDepth, furnitureHeight, frames, selectedFrameId, onFrameSelect, onFramePositionUpdate, canvasRef, occupiedPositions, onCameraReady } : Canvas3DProps) {
+export default function Canvas3D({ wallWidth, ceilingHeight, wallColor, flooring, light, furnitureColor, furnitureWidth, furnitureDepth, furnitureHeight, frames, selectedFrameId, onFrameSelect, onFramePositionUpdate, canvasRef, occupiedPositions, onCameraReady } : Canvas3DProps) {
 
 useEffect(() => {
     preloadTextures();
@@ -174,7 +175,7 @@ const handlePanControls = () => {
         onPointerMissed={() => handleFrameSelect(null)} // Deselect frame when clicking anywhere else in the scene
         shadows
       >
-        <ambientLight intensity={1} />
+        <ambientLight intensity={light} />
         <pointLight position={[0, pointLightHeight, -YPosition * 0.33]} intensity={3} castShadow />
         <directionalLight
           position={[0, directionalLightHeight, 0]}
