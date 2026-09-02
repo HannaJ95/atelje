@@ -230,7 +230,7 @@ export default function DesignerWorkspace({
             screenshotUrl={screenshotUrl}
             designName={designName || "design"}
           />
-          {error && <p>{error}</p>}
+          
         </div>
       </section>
       <section className={styles.workspaceSection}>
