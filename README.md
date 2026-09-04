@@ -188,6 +188,7 @@ dotnet user-secrets set "Jwt:Key" "your-super-secret-jwt-key-min-32-chars"
 dotnet user-secrets set "Jwt:Issuer" "http://localhost:5225"
 dotnet user-secrets set "Jwt:Audience" "http://localhost:3000"
 dotnet user-secrets set "Email:ApiKey" "your-resend-api-key"
+dotnet user-secrets set "Jwt:ExpiryInDays" "30"
 ```
 
 **Required User Secrets:**
@@ -195,6 +196,7 @@ dotnet user-secrets set "Email:ApiKey" "your-resend-api-key"
 - `Jwt:Issuer`: Backend URL (e.g., `http://localhost:5225`)
 - `Jwt:Audience`: Frontend URL (e.g., `http://localhost:3000`)
 - `Email:ApiKey`: Resend API key for email confirmation
+- `ExpiryInDays`: Days until Hwt key expires. "30" can be changed into preffered number of days
 
 **Optional Cloudflare R2 Secrets** (for screenshot uploads):
 - `R2:AccountId`
